@@ -1,0 +1,344 @@
+body { 
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../img/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 70px;
+    display: block;
+    filter: drop-shadow(0 0 4px rgba(184, 134, 11, 0.7));
+    transition: filter 0.3s ease;
+}
+
+.logo img:hover,
+.logo img:focus {
+    filter: drop-shadow(0 0 6px rgba(255, 241, 118, 0.9));
+    outline: none;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 40px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 8px 14px;
+    background-color: #B8860B;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar button i {
+    color: #FFD54F; /* dorado visible siempre */
+    text-shadow: 0 0 6px rgba(255, 213, 79, 0.8);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.search-bar button:hover i,
+.search-bar button:focus i {
+    color: #FFF176;
+    text-shadow: 0 0 8px rgba(255, 241, 118, 1);
+    outline: none;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    color: #B8860B;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    text-shadow: 0 0 4px rgba(184, 134, 11, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.account i {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #B8860B;
+    text-shadow: 0 0 4px rgba(184, 134, 11, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.account:hover,
+.account:focus {
+    color: #FFF176;
+    text-shadow: 0 0 6px rgba(255, 241, 118, 0.9);
+    outline: none;
+}
+
+.account:hover i,
+.account:focus i {
+    color: #FFF176;
+    text-shadow: 0 0 6px rgba(255, 241, 118, 0.9);
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid #B8860B;
+    border-bottom: 1px solid #B8860B;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+nav a {
+    color: #FFD54F;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    text-shadow: 0 0 4px rgba(255, 213, 79, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #FFF176;
+    text-shadow: 0 0 6px rgba(255, 241, 118, 0.9);
+    outline: none;
+}
+
+.contenido {
+    padding: 40px;
+}
+
+.pelicula {
+    margin-bottom: 20px;
+}
+
+.imagen-con-icono {
+    position: relative;
+    display: inline-block;
+}
+
+.imagen-con-icono img {
+    width: 180px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.pelicula-prox:hover .imagen-con-icono img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 213, 79, 0.4);
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-contenido {
+    background: #222;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    color: #FFD54F;
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.5);
+}
+
+.popup-contenido h2 {
+    color: #BB860B;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.popup-contenido p {
+    color: #fff8dc;
+    font-size: 16px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #BB860B;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.cerrar:hover {
+    color: #BB860B;
+    text-shadow: 0 0 6px rgba(255, 241, 118, 0.9);
+}   
+
+.icono-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888888;
+    font-size: 80px;
+    pointer-events: none;
+    opacity: 0.8;
+    text-shadow: none;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.pelicula-prox:hover .icono-play {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #FFD700;
+    text-shadow: 0 0 12px rgba(255, 241, 118, 0.8);
+}
+
+.sugerencias-autocomplete {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #B8860B;
+    border-radius: 10px;
+    z-index: 999;
+    display: none;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 213, 79, 0.4);
+}
+
+.sugerencia-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.3s;
+}
+
+.sugerencia-item img {
+    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.sugerencia-item:hover {
+    background: rgba(184, 134, 11, 0.3);
+}
+
+/* Modal de Cierre de Sesión */
+#modalCerrarSesion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+#modalCerrarSesion .modal-contenido {
+    background: #111;
+    color: #FFD54F;
+    padding: 30px;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.4);
+    position: relative;
+}
+
+#modalCerrarSesion h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #FFF8DC;
+}
+
+#modalCerrarSesion .botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#modalCerrarSesion button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#modalCerrarSesion .cancelar {
+    background-color: transparent;
+    color: #FFD54F;
+    border: 1px solid #FFD54F;
+}
+
+#modalCerrarSesion .cancelar:hover {
+    background-color: #FFD54F;
+    color: #000;
+}
+
+#modalCerrarSesion .confirmar {
+    background-color: #B8860B;
+    color: black;
+}
+
+#modalCerrarSesion .confirmar:hover {
+    background-color: #FFD700;
+}
