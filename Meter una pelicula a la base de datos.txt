@@ -1,0 +1,1 @@
+UPDATE peliculas SET video_url = 'videos/nombre_del_video.mp4' WHERE titulo = '';
